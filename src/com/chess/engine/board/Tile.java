@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * Abstract class for handling data on the 64 tiles on the
+ * Abstract class for handling data on the 64 static tiles on the
  * chessboard.
  */
 public abstract class Tile {
