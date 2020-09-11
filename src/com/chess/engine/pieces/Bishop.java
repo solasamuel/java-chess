@@ -59,6 +59,6 @@ public class Bishop extends Piece {
     }
 
     private boolean isEightColumnExclusive(int piecePosition, int candidateOffset) {
-        return BoardUtils.EIGHT_COLUMN[candidateOffset] && (candidateOffset == -7 || candidateOffset == 9);
+        return BoardUtils.EIGHTH_COLUMN[candidateOffset] && (candidateOffset == -7 || candidateOffset == 9);
     }
 }

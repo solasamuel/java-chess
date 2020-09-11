@@ -57,6 +57,6 @@ public class Rook extends Piece {
     }
 
     private boolean isEightColumnExclusive(int piecePosition, int candidateOffset) {
-        return BoardUtils.EIGHT_COLUMN[candidateOffset] && (candidateOffset == 1);
+        return BoardUtils.EIGHTH_COLUMN[candidateOffset] && (candidateOffset == 1);
     }
 }
