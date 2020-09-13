@@ -11,11 +11,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/*
+ * Class describing the King piece and its properties.
+ */
 public class King extends Piece {
 
     public static final int[] CANDIDATE_MOVE_COORDINATE = {-9, -8, -7, -1, 1, 7, 8, 9};
 
-    King(final int piecePosition, final Alliance pieceAlliance) {
+    public King(final int piecePosition, final Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -46,13 +49,18 @@ public class King extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
-    private static boolean isFirstColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -9 || candidateOffset == 7 ||
+    @Override
+    public String toString() {
+        return PieceType.KING.toString();
+    }
+
+    private static boolean isFirstColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.FIRST_COLUMN[piecePosition] && (candidateOffset == -9 || candidateOffset == 7 ||
                 candidateOffset == -1);
     }
 
-    private static boolean isEighthColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == 9 || candidateOffset == -7 ||
+    private static boolean isEighthColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.EIGHTH_COLUMN[piecePosition] && (candidateOffset == 9 || candidateOffset == -7 ||
                 candidateOffset == 1);
     }
 

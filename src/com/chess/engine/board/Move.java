@@ -2,6 +2,9 @@ package com.chess.engine.board;
 
 import com.chess.engine.pieces.Piece;
 
+/*
+ * Class describing & implementing all types of piece move.
+ */
 public abstract class Move {
 
     final Board board;

@@ -13,10 +13,13 @@ import java.util.List;
 
 import static com.chess.engine.board.Move.*;
 
+/*
+ * Class describing the the Rook piece and it's properties.
+ */
 public class Rook extends Piece {
     private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATE = {-8, -1, 1, 8};
 
-    private Rook(int piecePosition, Alliance pieceAlliance) {
+    public Rook(int piecePosition, Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -52,11 +55,16 @@ public class Rook extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
+    @Override
+    public String toString() {
+        return PieceType.ROOK.toString();
+    }
+
     private boolean isFirstColumnExclusive(final int piecePosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[candidateOffset] && (candidateOffset == -1);
+        return BoardUtils.FIRST_COLUMN[piecePosition] && (candidateOffset == -1);
     }
 
     private boolean isEightColumnExclusive(int piecePosition, int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[candidateOffset] && (candidateOffset == 1);
+        return BoardUtils.EIGHTH_COLUMN[piecePosition] && (candidateOffset == 1);
     }
 }

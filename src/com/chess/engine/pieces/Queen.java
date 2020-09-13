@@ -13,10 +13,13 @@ import java.util.List;
 
 import static com.chess.engine.board.Move.*;
 
+/*
+ * Class describing the Queen piece and its properties.
+ */
 public class Queen extends Piece {
     private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATE = { -9, -8, -7, -1, 1, 7, 8, 9 };
 
-    private Queen(int piecePosition, Alliance pieceAlliance) {
+    public Queen(int piecePosition, Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -52,11 +55,16 @@ public class Queen extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
+    @Override
+    public String toString() {
+        return PieceType.QUEEN.toString();
+    }
+
     private boolean isFirstColumnExclusive(final int piecePosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[candidateOffset] && (candidateOffset == -9 || candidateOffset == 7 || candidateOffset == -1);
+        return BoardUtils.FIRST_COLUMN[piecePosition] && (candidateOffset == -9 || candidateOffset == 7 || candidateOffset == -1);
     }
 
     private boolean isEightColumnExclusive(int piecePosition, int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[candidateOffset] && (candidateOffset == -7 || candidateOffset == 9 || candidateOffset == 1);
+        return BoardUtils.EIGHTH_COLUMN[piecePosition] && (candidateOffset == -7 || candidateOffset == 9 || candidateOffset == 1);
     }
 }

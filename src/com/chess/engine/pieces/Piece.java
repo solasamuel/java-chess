@@ -6,6 +6,9 @@ import com.chess.engine.board.Move;
 
 import java.util.Collection;
 
+/*
+ * Abstract Class describing the general information of a piece.
+ */
 public abstract class Piece {
 
     protected final int piecePosition;
@@ -27,5 +30,28 @@ public abstract class Piece {
 
     public boolean isFirstMove() {
         return this.isFirstMove;
+    }
+
+    public int getPiecePosition() { return this.piecePosition; }
+
+    public enum PieceType {
+
+        PAWN("P"),
+        KNIGHT("N"),
+        BISHOP("B"),
+        ROOK("R"),
+        QUEEN("Q"),
+        KING("K");
+
+        private String pieceName;
+
+        PieceType(final String pieceName) {
+            this.pieceName = pieceName;
+        }
+
+        @Override
+        public String toString() {
+            return this.pieceName;
+        }
     }
 }

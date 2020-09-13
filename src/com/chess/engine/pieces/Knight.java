@@ -13,11 +13,14 @@ import java.util.List;
 
 import static com.chess.engine.board.Move.*;
 
+/*
+ * Class describing the KinightPiece and it's properties.
+ */
 public class Knight extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATE = {-17, -15, -10, -6, 6, 10, 15, 17};
 
-    Knight(final int piecePosition, final Alliance pieceAlliance) {
+    public Knight(final int piecePosition, final Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -51,21 +54,26 @@ public class Knight extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
-    private static boolean isFirstColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -17 || candidateOffset == -10 ||
+    @Override
+    public String toString() {
+        return PieceType.KNIGHT.toString();
+    }
+
+    private static boolean isFirstColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.FIRST_COLUMN[piecePosition] && (candidateOffset == -17 || candidateOffset == -10 ||
                 candidateOffset == 6 || candidateOffset == 15);
     }
 
-    private static boolean isSecondColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.SECOND_COLUMN[currentPosition] && (candidateOffset == -10 || candidateOffset == 6);
+    private static boolean isSecondColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.SECOND_COLUMN[piecePosition] && (candidateOffset == -10 || candidateOffset == 6);
     }
 
-    private static boolean isSeventhColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.SEVENTH_COLUMN[currentPosition] && (candidateOffset == 10 || candidateOffset == -6);
+    private static boolean isSeventhColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.SEVENTH_COLUMN[piecePosition] && (candidateOffset == 10 || candidateOffset == -6);
     }
 
-    private static boolean isEighthColumnExclusive(final int currentPosition, final int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == 17 || candidateOffset == 10 ||
+    private static boolean isEighthColumnExclusive(final int piecePosition, final int candidateOffset) {
+        return BoardUtils.EIGHTH_COLUMN[piecePosition] && (candidateOffset == 17 || candidateOffset == 10 ||
                 candidateOffset == -6 || candidateOffset == -15);
     }
 

@@ -13,12 +13,14 @@ import java.util.List;
 
 import static com.chess.engine.board.Move.*;
 
-
+/*
+ * Class describing the Bishop Class and it's properties.
+ */
 public class Bishop extends Piece {
 
     private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATE = {-9, -7, 7, 9};
 
-    private Bishop(int piecePosition, Alliance pieceAlliance) {
+    public Bishop(int piecePosition, Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -54,11 +56,16 @@ public class Bishop extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
+    @Override
+    public String toString() {
+        return PieceType.BISHOP.toString();
+    }
+
     private boolean isFirstColumnExclusive(final int piecePosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[candidateOffset] && (candidateOffset == -9 || candidateOffset == 7);
+        return BoardUtils.FIRST_COLUMN[piecePosition] && (candidateOffset == -9 || candidateOffset == 7);
     }
 
     private boolean isEightColumnExclusive(int piecePosition, int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[candidateOffset] && (candidateOffset == -7 || candidateOffset == 9);
+        return BoardUtils.EIGHTH_COLUMN[piecePosition] && (candidateOffset == -7 || candidateOffset == 9);
     }
 }
