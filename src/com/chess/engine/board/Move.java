@@ -19,6 +19,14 @@ public abstract class Move {
         this.destinationCoordinate = destinationCoordinate;
     }
 
+    public Board execute() {
+        return null;
+    }
+
+    public int getDestinationCoordinate() {
+        return destinationCoordinate;
+    }
+
     public static final class RegularMove extends Move {
 
         public RegularMove(final Board board,

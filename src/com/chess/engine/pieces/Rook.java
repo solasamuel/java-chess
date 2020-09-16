@@ -19,8 +19,8 @@ import static com.chess.engine.board.Move.*;
 public class Rook extends Piece {
     private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATE = {-8, -1, 1, 8};
 
-    public Rook(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Rook(final int piecePosition, final Alliance pieceAlliance) {
+        super(PieceType.ROOK, piecePosition, pieceAlliance);
     }
 
     @Override
