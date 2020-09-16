@@ -1,2 +1,2 @@
 # java-chess
-A full chess engine with using Java.
+A full chess engine built with Java.
