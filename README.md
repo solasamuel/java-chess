@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is a Chess engine built with Java.
+This project is a chess engine built with Java and Object Oriented Programming.
 	
 ## Technologies
 Project is created with:
